@@ -1,8 +1,12 @@
 :root {
-    --ColorFondo: #bed2ef;
+    --blanco: #fff;
+    --ColorFondo: #cfe1f2;
     --amarilloOscuro: #fed013;
     --amarillo: #fefbe6;
-    --gris: #3e434d;
+    --gris: #575e6b;
+    --azulOscuro: #3352d0;
+    --azulImg: #2872df;
+    --azul: #e3e8ff;
 }
 
 html {
@@ -28,7 +32,8 @@ body {
     margin: 0 auto;
 }
 
-p, a {
+p,
+a {
     color: var(--gris);
 }
 
@@ -61,6 +66,12 @@ img {
     }
 }
 
+@media (min-width: 992px) {
+    .header__logo {
+        width: 50%;
+    }
+}
+
 .nav {
     gap: 2rem;
 }
@@ -73,17 +84,99 @@ img {
 
 .nav__enlace {
     padding: 1rem;
+    font-size: 1.7rem;
 }
 
-h1 {
+.nav__enlace:last-child {
+    color: var(--blanco);
+    padding: 1rem 3rem;
+    border-radius: .7rem;
+    box-shadow: 2px 5px 24px 5px rgba(133, 162, 232, 1);
+    -webkit-box-shadow: 2px 5px 24px 5px rgba(133, 162, 232, 1);
+    -moz-box-shadow: 2px 5px 24px 5px rgba(133, 162, 232, 1);
+    background-color: #3657d5;
+}
+
+.nav__enlace:hover {
+    text-decoration: underline;
+}
+
+.img-fondo {
+    position: absolute;
+}
+
+.img-fondo-top {
+    top: 42rem;
+    left: 0;
+    width: 30%;
+    height: 15%;
+}
+
+@media (min-width: 768px) {
+    .img-fondo-top {
+        top: 9rem;
+        width: 20%;
+        height: 15%;
+    }
+}
+
+.img-fondo-right {
+    top: 65rem;
+    right: 0;
+    height: 50%;
+    width: 25%;
+}
+
+@media (min-width: 768px) {
+    .img-fondo-right {
+        top: 20rem;
+        height: 80%;
+        width: 15%;
+    }
+}
+
+@media (min-width: 768px) { 
+    .vacunacion {
+        flex-direction: row;
+        gap: 2.5rem;
+    }
+}
+.vacunacion__titulo {
+    margin-top: 8rem;
     text-transform: capitalize;
 }
 
+@media (min-width: 768px) { 
+    .vacunacion__titulo {
+        margin-top: 10rem;
+    }
+}
+
 .bi {
+    border-color: var(--blanco);
+    border-style: double;
+}
+
+.bi-shield-check,
+.bi-star-fill {
     color: var(--amarilloOscuro);
     padding: 1rem;
     -webkit-box-shadow: -1px 6px 16px 1px rgba(242, 231, 162, 1);
     -moz-box-shadow: -1px 6px 16px 1px rgba(242, 231, 162, 1);
     box-shadow: -1px 6px 16px 1px rgba(242, 231, 162, 1);
     background-color: var(--amarillo);
+}
+
+.bi-clock-fill {
+    color: var(--azulOscuro);
+    padding: .8rem;
+    background-color: var(--azul);
+    box-shadow: 1px 9px 17px 5px rgba(166, 176, 217, 1);
+    -webkit-box-shadow: 1px 9px 17px 5px rgba(166, 176, 217, 1);
+    -moz-box-shadow: 1px 9px 17px 5px rgba(166, 176, 217, 1);
+}
+
+.vacunacion__img {
+    background-color: var(--azulImg);
+    padding: 4rem 2rem;
 }
