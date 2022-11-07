@@ -4,9 +4,13 @@
     --amarilloOscuro: #fed013;
     --amarillo: #fefbe6;
     --gris: #575e6b;
+    --azulTitulo: #1e3e73;
     --azulOscuro: #3352d0;
     --azulImg: #2872df;
     --azul: #e3e8ff;
+
+    --fuenteTitulos: 'Source Sans Pro', sans-serif;
+    --fuenteContenido: 'Montserrat', sans-serif;
 }
 
 html {
@@ -32,8 +36,19 @@ body {
     margin: 0 auto;
 }
 
+h1,
+h2 {
+    font-family: var(--fuenteTitulos);
+}
+
+h1 {
+    text-transform: capitalize;
+    font-size: 6rem;
+}
+
 p,
 a {
+    font-family: var(--fuenteContenido);
     color: var(--gris);
 }
 
@@ -49,20 +64,26 @@ img {
 .flex-column {
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 /*Header*/
 
 .header {
+    position: absolute;
+    width: 100%;
+    opacity: 0.85;
+    background-color: var(--blanco);
     align-items: center;
     gap: 2rem;
-    padding: 2rem;
+
 }
 
 @media (min-width: 768px) {
     .header {
         flex-direction: row;
         justify-content: space-between;
+        padding: 2rem;
     }
 }
 
@@ -84,22 +105,32 @@ img {
 
 .nav__enlace {
     padding: 1rem;
-    font-size: 1.7rem;
-}
-
-.nav__enlace:last-child {
-    color: var(--blanco);
-    padding: 1rem 3rem;
-    border-radius: .7rem;
-    box-shadow: 2px 5px 24px 5px rgba(133, 162, 232, 1);
-    -webkit-box-shadow: 2px 5px 24px 5px rgba(133, 162, 232, 1);
-    -moz-box-shadow: 2px 5px 24px 5px rgba(133, 162, 232, 1);
-    background-color: #3657d5;
+    font-size: 1.8rem;
 }
 
 .nav__enlace:hover {
     text-decoration: underline;
 }
+
+.button {
+    color: var(--blanco);
+    padding: 1rem 3rem;
+    border-style: none;
+    border-radius: .7rem;
+    box-shadow: 2px 5px 24px 5px rgba(133, 162, 232, 1);
+    -webkit-box-shadow: 2px 5px 24px 5px rgba(133, 162, 232, 1);
+    -moz-box-shadow: 2px 5px 24px 5px rgba(133, 162, 232, 1);
+    background-color: #3657d5;
+    margin-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+    .button {
+        margin-bottom: 0;
+    }
+}
+
+/*Vacunacion*/
 
 .img-fondo {
     position: absolute;
@@ -108,53 +139,113 @@ img {
 .img-fondo-top {
     top: 42rem;
     left: 0;
-    width: 30%;
-    height: 15%;
+    width: 35%;
+    height: 10%;
 }
 
 @media (min-width: 768px) {
     .img-fondo-top {
-        top: 9rem;
+        top: 12rem;
         width: 20%;
-        height: 15%;
+        height: 10%;
     }
 }
 
 .img-fondo-right {
     top: 65rem;
-    right: 0;
+    right: 10rem;
     height: 50%;
     width: 25%;
 }
 
 @media (min-width: 768px) {
     .img-fondo-right {
-        top: 20rem;
-        height: 80%;
+        top: 45rem;
+        right: 0;
+        height: 25%;
         width: 15%;
     }
 }
 
-@media (min-width: 768px) { 
-    .vacunacion {
-        flex-direction: row;
-        gap: 2.5rem;
+@media (min-width: 992px) { 
+    .img-fondo-right {
+        top: 65rem;
+        left: 35rem;
+        height: 35%;
+        width: 15%;
     }
 }
+
+@media (min-width: 1200px) { 
+    .img-fondo-right {
+        top: 45rem;
+        left: 64rem;
+        height: 35%;
+        width: 10%;
+    }
+}
+
+@media (min-width: 992px) {
+    .vacunacion {
+        flex-direction: row;
+        gap: 15rem;
+    }
+}
+
+/*Vacunacion Contenido*/
+
+.vacunacion__contenido {
+    margin-top: 35rem;
+}
+
+@media (min-width: 768px) {
+    .vacunacion__contenido {
+        margin-top: 5rem;
+    }
+}
+
 .vacunacion__titulo {
-    margin-top: 8rem;
-    text-transform: capitalize;
+    margin-top: 15rem;
+    color: var(--azulTitulo);
 }
 
 @media (min-width: 768px) { 
     .vacunacion__titulo {
-        margin-top: 10rem;
+        margin-top: 20rem;
     }
 }
 
-.bi {
-    border-color: var(--blanco);
-    border-style: double;
+.vacunacion__titulo span {
+    display: block;
+}
+
+.vacunacion__texto {
+    font-size: 1.8rem;
+}
+
+.vacunacion__info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 5rem;
+}
+
+.vacunacion__info p {
+    color: var(--azulTitulo);
+}
+
+.vacunacion__info:last-child {
+    margin: 13rem 0 20rem;
+    font-weight: bold;
+}
+
+.vacunacion__info-beneficios {
+    display: flex;
+    gap: 1rem;
+}
+
+.vacunacion__info-beneficios:last-child {
+    margin-left: 3rem;
 }
 
 .bi-shield-check,
@@ -176,7 +267,111 @@ img {
     -moz-box-shadow: 1px 9px 17px 5px rgba(166, 176, 217, 1);
 }
 
+.bi-shield-check,
+.bi-star-fill,
+.bi-clock-fill {
+    border-color: var(--blanco);
+    border-style: double;
+}
+
 .vacunacion__img {
     background-color: var(--azulImg);
-    padding: 4rem 2rem;
+    padding: 10rem 2rem 2rem;
+}
+
+@media (min-width: 992px) {
+    .vacunacion__img {
+        display: flex;
+        justify-content: center;
+        width: 70%;
+        padding: 40rem 2rem 4rem;
+    }
+}
+
+/*Calendario*/
+
+.calendario {
+    position: absolute;
+    top: 106rem;
+    padding: 1rem;
+    opacity: 0.85;
+    gap: 2rem;
+    border-radius: 0.5rem;
+    background-color: var(--blanco);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+@media (min-width: 768px) {
+    .calendario {
+        grid-template-columns: repeat(4, 1fr);
+        top: 80rem;
+        left: 5rem;
+        padding: 1.5rem 3rem;
+    }
+}
+
+@media (min-width: 992px) {
+    .calendario {
+        top: 98rem;
+        left: 5rem;
+        padding: 1rem 2.5rem 1rem 5rem;
+    }
+}
+
+@media (min-width: 1200px) { 
+    .calendario {
+        top: 85rem;
+        left: 8rem;
+        padding: 1rem 8rem;
+    }
+}
+
+.calendario__sub {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.bi-geo-alt-fill,
+.bi-calendar2-week-fill,
+.bi-pencil-fill {
+    color: var(--azulOscuro);
+    background-color: var(--azul);
+    border-radius: 0.5rem;
+    padding: 0.8rem;
+}
+
+.calendario__texto {
+    font-family: var(--fuenteTitulos);
+    color: var(--azulTitulo);
+    font-weight: bold;
+}
+
+@media (min-width: 768px) {
+    .calendario__texto {
+        margin-left: 4.5rem;
+    }
+}
+
+.calendario__button {
+    grid-column: 1 / 4;
+}
+
+@media (min-width: 768px) {
+    .calendario__button {
+        grid-column: 4;
+    }
+}
+
+.calendario__button input {
+    padding: 1rem 16.7rem;
+}
+
+@media (min-width: 768px) {
+    .calendario__button input {
+        padding: 1.5rem 4rem;
+        margin-top: 2.5rem;
+        margin-left: 1.5rem;
+    }
 }
