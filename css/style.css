@@ -4,6 +4,7 @@
     --amarilloOscuro: #fed013;
     --amarillo: #fefbe6;
     --gris: #575e6b;
+    --grisclaro: #b5b5b5;
     --azulTitulo: #1e3e73;
     --azulOscuro: #3352d0;
     --azulImg: #2872df;
@@ -37,13 +38,23 @@ body {
 }
 
 h1,
-h2 {
+h2,
+h3 {
     font-family: var(--fuenteTitulos);
+    color: var(--azulTitulo);
+}
+
+h1,
+h2 {
+    text-transform: capitalize;
 }
 
 h1 {
-    text-transform: capitalize;
     font-size: 6rem;
+}
+
+h2 {
+    font-size: 4rem;
 }
 
 p,
@@ -61,17 +72,32 @@ img {
     width: 100%;
 }
 
+
+
+/*Utilidades*/
+
 .flex-column {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
+.upper {
+    text-transform: uppercase;
+}
+
+.fondo-img {
+    color: var(--azulOscuro);
+    background-color: var(--azul);
+    border-radius: 0.5rem;
+    padding: 0.8rem;
+}
+
 /*Header*/
 
 .header {
     position: absolute;
-    width: 100%;
+    width: 99%;
     opacity: 0.85;
     background-color: var(--blanco);
     align-items: center;
@@ -167,7 +193,7 @@ img {
     }
 }
 
-@media (min-width: 992px) { 
+@media (min-width: 992px) {
     .img-fondo-right {
         top: 65rem;
         left: 35rem;
@@ -176,7 +202,7 @@ img {
     }
 }
 
-@media (min-width: 1200px) { 
+@media (min-width: 1200px) {
     .img-fondo-right {
         top: 45rem;
         left: 64rem;
@@ -206,10 +232,9 @@ img {
 
 .vacunacion__titulo {
     margin-top: 15rem;
-    color: var(--azulTitulo);
 }
 
-@media (min-width: 768px) { 
+@media (min-width: 768px) {
     .vacunacion__titulo {
         margin-top: 20rem;
     }
@@ -259,9 +284,6 @@ img {
 }
 
 .bi-clock-fill {
-    color: var(--azulOscuro);
-    padding: .8rem;
-    background-color: var(--azul);
     box-shadow: 1px 9px 17px 5px rgba(166, 176, 217, 1);
     -webkit-box-shadow: 1px 9px 17px 5px rgba(166, 176, 217, 1);
     -moz-box-shadow: 1px 9px 17px 5px rgba(166, 176, 217, 1);
@@ -295,6 +317,7 @@ img {
     top: 106rem;
     padding: 1rem;
     opacity: 0.85;
+    width: 100%;
     gap: 2rem;
     border-radius: 0.5rem;
     background-color: var(--blanco);
@@ -305,8 +328,9 @@ img {
 @media (min-width: 768px) {
     .calendario {
         grid-template-columns: repeat(4, 1fr);
+        width: auto;
         top: 80rem;
-        left: 5rem;
+        left: 4.5rem;
         padding: 1.5rem 3rem;
     }
 }
@@ -319,9 +343,9 @@ img {
     }
 }
 
-@media (min-width: 1200px) { 
+@media (min-width: 1200px) {
     .calendario {
-        top: 85rem;
+        top: 82rem;
         left: 8rem;
         padding: 1rem 8rem;
     }
@@ -331,15 +355,6 @@ img {
     display: flex;
     align-items: center;
     gap: 1rem;
-}
-
-.bi-geo-alt-fill,
-.bi-calendar2-week-fill,
-.bi-pencil-fill {
-    color: var(--azulOscuro);
-    background-color: var(--azul);
-    border-radius: 0.5rem;
-    padding: 0.8rem;
 }
 
 .calendario__texto {
@@ -365,7 +380,7 @@ img {
 }
 
 .calendario__button input {
-    padding: 1rem 16.7rem;
+    width: 100%;
 }
 
 @media (min-width: 768px) {
@@ -374,4 +389,62 @@ img {
         margin-top: 2.5rem;
         margin-left: 1.5rem;
     }
+}
+
+/* Sección 2*/
+
+.seccion2__imagenes {
+    margin: 5rem 0;
+    opacity: 0.4;
+    gap: 3rem;
+}
+
+@media (min-width: 786px) {
+    .seccion2__imagenes {
+        flex-direction: row;
+    }
+}
+
+.seccion2__info {
+    margin-top: 15rem;
+}
+
+.span {
+    display: block;
+}
+
+.seccion2__beneficios {
+    align-items: flex-start;
+}
+
+@media (min-width: 768px) { 
+    .seccion2__beneficios {
+        flex-direction: row;
+        gap: 2rem;
+    }
+}
+
+.seccion2__beneficios-item {
+    width: 100%;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    border: 2px solid var(--grisclaro);
+    margin: 2rem 0 2.5rem;
+}
+
+@media (min-width: 768px) { 
+    .seccion2__beneficios-item {
+        height: 28rem;
+    }
+}
+
+.seccion2__beneficios-item:hover {
+    box-shadow: 2px 3px 19px 4px rgba(130, 157, 219, 0.66);
+    -webkit-box-shadow: 2px 3px 19px 4px rgba(130, 157, 219, 0.66);
+    -moz-box-shadow: 2px 3px 19px 4px rgba(130, 157, 219, 0.66);
+}
+
+.seccion2__beneficios-item svg {
+    border-color: var(--blanco);
+    border-style: double;
 }
