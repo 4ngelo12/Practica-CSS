@@ -33,7 +33,7 @@ body {
 /*Globales*/
 
 .contenedor {
-    width: min(90%, 140rem);
+    width: min(90%, 120rem);
     margin: 0 auto;
 }
 
@@ -409,8 +409,10 @@ img {
     margin-top: 15rem;
 }
 
-.span {
-    display: block;
+@media (min-width: 992px) { 
+    .span {
+        display: block;
+    }
 }
 
 .seccion2__beneficios {
@@ -434,7 +436,13 @@ img {
 
 @media (min-width: 768px) { 
     .seccion2__beneficios-item {
-        height: 28rem;
+        height: 35rem;
+    }
+}
+
+@media (min-width: 992px) { 
+    .seccion2__beneficios-item {
+        height: 27rem;
     }
 }
 
@@ -447,4 +455,51 @@ img {
 .seccion2__beneficios-item svg {
     border-color: var(--blanco);
     border-style: double;
+}
+
+/*Sección 3*/
+
+.seccion3 {
+    margin-top: 15rem;
+}
+
+@media (min-width: 992px) { 
+    .seccion3 {
+        flex-direction: row;
+        align-items: center;
+        gap: 2.5rem;
+    }
+}
+
+.seccion3__img {
+    width: 90%;
+}
+
+@media (min-width: 768px) { 
+    .seccion3__img {
+        margin-top: 15rem;
+    }
+}
+
+@media (min-width: 992px) { 
+    .seccion3__img {
+        width: 200%;
+        height: 600%;
+    }
+}
+
+.seccion3__preparacion {
+    padding: 3rem;
+}
+
+.seccion3__flex {
+    display: flex;
+    align-items: center;   
+    justify-content: space-between;
+}
+
+.seccion3__flex-titulo {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
 }
